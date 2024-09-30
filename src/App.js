@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavigationBar from './NavigationBar';
+import LoginPage from './LoginPage';
+import DashboardPage from './DashboardPage';
+import ProductsPage from './ProductsPage';
+import AddNewProductPage from './AddNewProductPage';
+import AccountsPage from './AccountsPage';
 import './App.css';
 
 function App() {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  const handleThemeToggle = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
+
+  console.log('App is rendering'); // Check if App component renders
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className={isDarkTheme ? 'dark-theme' : 'light-theme'}>
+        <NavigationBar onThemeToggle={handleThemeToggle} isDarkTheme={isDarkTheme} />
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/add-new-product" element={<AddNewProductPage />} />
+          <Route path="/accounts" element={<AccountsPage />} />
+          <Route path="/" element={<LoginPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
+
 
 export default App;
