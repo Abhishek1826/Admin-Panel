@@ -33,7 +33,7 @@ function App() {
           <Route path="/DashboardPage" element={<DashboardPage />} />
 
           {/* Route for Products Page */}
-          <Route path="/ProductsPage " element={<ProductsPage />} />
+          <Route path="/ProductsPage" element={<ProductsPage />} />
 
           {/* Route for Add New Product */}
           <Route path="/AddNewProductPage" element={<AddNewProductPage />} />
