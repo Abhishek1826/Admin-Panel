@@ -18,21 +18,35 @@ function App() {
   console.log('App is rendering'); // Check if App component renders
 
   return (
-    <Router>
+    // Add basename to Router for GitHub Pages
+    <Router basename={process.env.PUBLIC_URL}>
       <div className={isDarkTheme ? 'dark-theme' : 'light-theme'}>
+        {/* Pass theme toggle handler to NavigationBar */}
         <NavigationBar onThemeToggle={handleThemeToggle} isDarkTheme={isDarkTheme} />
+
+        {/* Define routes for the app */}
         <Routes>
+          {/* Route for Login Page */}
           <Route path="/login" element={<LoginPage />} />
+
+          {/* Route for Dashboard */}
           <Route path="/dashboard" element={<DashboardPage />} />
+
+          {/* Route for Products Page */}
           <Route path="/products" element={<ProductsPage />} />
+
+          {/* Route for Add New Product */}
           <Route path="/add-new-product" element={<AddNewProductPage />} />
+
+          {/* Route for Accounts Page */}
           <Route path="/accounts" element={<AccountsPage />} />
+
+          {/* Default route */}
           <Route path="/" element={<LoginPage />} />
         </Routes>
       </div>
     </Router>
   );
 }
-
 
 export default App;
