@@ -27,22 +27,22 @@ function App() {
         {/* Define routes for the app */}
         <Routes>
           {/* Route for Login Page */}
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/LoginPage" element={<LoginPage />} />
 
           {/* Route for Dashboard */}
           <Route path="/DashboardPage" element={<DashboardPage />} />
 
           {/* Route for Products Page */}
-          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/ProductsPage " element={<ProductsPage />} />
 
           {/* Route for Add New Product */}
-          <Route path="/add-new-product" element={<AddNewProductPage />} />
+          <Route path="/AddNewProductPage" element={<AddNewProductPage />} />
 
           {/* Route for Accounts Page */}
-          <Route path="/accounts" element={<AccountsPage />} />
+          <Route path="/AccountsPage" element={<AccountsPage />} />
 
           {/* Default route */}
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/LoginPage" element={<LoginPage />} />
         </Routes>
       </div>
     </Router>
