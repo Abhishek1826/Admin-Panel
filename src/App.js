@@ -18,20 +18,16 @@ function App() {
   console.log('App is rendering'); // Check if App component renders
 
   return (
-    // Use HashRouter instead of BrowserRouter
-    <Router>
+    <Router> {/* Using HashRouter */}
       <div className={isDarkTheme ? 'dark-theme' : 'light-theme'}>
-        {/* Pass theme toggle handler to NavigationBar */}
         <NavigationBar onThemeToggle={handleThemeToggle} isDarkTheme={isDarkTheme} />
-
-        {/* Define routes for the app */}
+        
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/products" element={<ProductsPage />} />
-          <Route path="/addNewproduct" element={<AddNewProductPage />} />
+          <Route path="/addNewProduct" element={<AddNewProductPage />} />
           <Route path="/accounts" element={<AccountsPage />} />
-          <Route path="/" element={<LoginPage />} />
         </Routes>
       </div>
     </Router>
